@@ -50,17 +50,17 @@ export const CustomConfig: DeepPartial<ConfigType> = {
         {
             mapName: "main",
             teamMode: 1,
-            enabled: false,
+            enabled: true,
         },
         {
-            mapName: "main",
+            mapName: "desert",
             teamMode: 2,
             enabled: true,
         },
         {
-            mapName: "main",
+            mapName: "faction",
             teamMode: 4,
-            enabled: false,
+            enabled: true,
         },
     ],
     gameConfig: {

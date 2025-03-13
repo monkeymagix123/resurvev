@@ -219,6 +219,9 @@ export class PlaneBarn {
             collider: collider.transform(def.collision, airdropPos, 0, 1),
         };
 
+        // immediately create drop rather than airdrop w/ plane FLAGGED
+        this.game.airdropBarn.addAirdrop(airdrop.pos, airdrop.type);
+        /*
         const planePos = v2.add(pos, v2.mul(v2.randomUnit(), AIRDROP_PLANE_SPAWN_DIST));
 
         const toPlanePos = v2.sub(airdropPos, planePos);
@@ -226,7 +229,7 @@ export class PlaneBarn {
         let dir = len > 0.00001 ? v2.div(toPlanePos, len) : v2.create(1, 0);
 
         const plane = new AirdropPlane(this.game, id, planePos, dir, airdrop);
-        this.planes.push(plane);
+        this.planes.push(plane);*/
     }
 
     addAirStrike(targetPos: Vec2, dir: Vec2) {

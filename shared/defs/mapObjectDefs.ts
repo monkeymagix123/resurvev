@@ -10331,6 +10331,10 @@ export const MapObjectDefs: Record<string, MapObjectDef> = {
             zIdx: 10,
         },
     }),
+    // weaker stone for dropping
+    stone_drop: createStone({
+        health: 100
+    }),
     stove_01: createControlPanel({
         obstacleType: "furniture",
         scale: {

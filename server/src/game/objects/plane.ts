@@ -220,7 +220,8 @@ export class PlaneBarn {
         };
 
         // immediately create drop rather than airdrop w/ plane FLAGGED
-        this.game.airdropBarn.addAirdrop(airdrop.pos, airdrop.type);
+        // this.game.airdropBarn.addAirdrop(airdrop.pos, airdrop.type);
+        // not needed
         /*
         const planePos = v2.add(pos, v2.mul(v2.randomUnit(), AIRDROP_PLANE_SPAWN_DIST));
 

@@ -83,16 +83,29 @@ export class BulletBarn {
                 i--;
 
                 if (bullet.onHitFx && !bullet.reflected) {
-                    this.game.explosionBarn.addExplosion(
-                        bullet.onHitFx,
-                        // spawn the bullet a bit behind the bullet so it won't spawn inside obstacles
-                        v2.sub(bullet.pos, v2.mul(bullet.dir, 0.01)),
-                        bullet.layer,
-                        bullet.shotSourceType,
-                        bullet.mapSourceType,
-                        bullet.damageType,
-                        bullet.player,
-                    );
+                    // changed for goofy flare
+                    const bulletDef = GameObjectDefs[bullet.bulletType] as BulletDef
+                    if (bulletDef.onHit === "airdrop") {
+                        // for flare
+                        // const airdrop: ScheduledAirDrop = {
+                        //             type,
+                        //             pos: airdropPos,
+                        //             collider: collider.transform(def.collision, airdropPos, 0, 1),
+                        //         };
+                        const type = util.weightedRandom(this.game.map.mapDef.gameConfig.planes.crates).name;
+                        this.game.airdropBarn.addAirdrop(bullet.pos, type);
+                    } else {
+                        this.game.explosionBarn.addExplosion(
+                            bullet.onHitFx,
+                            // spawn the bullet a bit behind the bullet so it won't spawn inside obstacles
+                            v2.sub(bullet.pos, v2.mul(bullet.dir, 0.01)),
+                            bullet.layer,
+                            bullet.shotSourceType,
+                            bullet.mapSourceType,
+                            bullet.damageType,
+                            bullet.player,
+                        );
+                    }
                 }
 
                 continue;

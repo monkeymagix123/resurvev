@@ -3082,7 +3082,12 @@ export const GunDefs: Record<string, GunDef> = {
         pistol: true,
         outsideOnly: true,
         ammoSpawnCount: 1,
-        ignoreEndlessAmmo: true,
+        // ignoreEndlessAmmo: true,
+        // this should be true, but make it so easier to test
+        ignoreEndlessAmmo: false,
+        // new -- from usas
+        toMouseHit: true,
+        //
         maxClip: 1,
         maxReload: 1,
         extendedClip: 1,
@@ -3134,7 +3139,11 @@ export const GunDefs: Record<string, GunDef> = {
         pistol: true,
         outsideOnly: true,
         ammoSpawnCount: 2,
-        ignoreEndlessAmmo: true,
+        // ignoreEndlessAmmo: true,
+        ignoreEndlessAmmo: false,
+        // // new -- from usas
+        toMouseHit: true,
+        //
         maxClip: 2,
         maxReload: 2,
         extendedClip: 2,
